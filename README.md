@@ -47,3 +47,7 @@ $\quad$• SVM
 $\textbf{More Details about Conclusions and Technical Results on the Webpages}$  
 
 $\textbf{Homepage: Hourai Tour.html}$
+
+$\textbf{Also Deployed in my Georgetown Domain:}$  
+
+https://kiana648.georgetown.domains/courses/ANLY501/html/Hourai%20Tour.html
