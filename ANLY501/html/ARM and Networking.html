@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ARM and Networking</title>
+<link rel="stylesheet" href="../css/style7.css">
+</head>
+<body class='back'>
+	<div></div>
+	<div class="container">
+	    <div class="title">ARM and Networking</div>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Intro</i></h2>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The goal of this part is trying to use ARM method to find potential rules for transaction data and make network visualizations for the results.</p>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>About Datasets</i></h2>
+		<br/>
+	    <h3><i>Tweet Data</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>Cleaned Tweets in the form of word baskets on the anime of <i>Violet Evergarden</i>:
+				<p class='question'><a href='../datasets/tweets/tweets_VioletEvergarden.csv'>tweets_VioletEvergarden.csv</a></p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot37.png" width=300px height=300px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>Cleaned Tweets in the form of word baskets on the anime of <i>Naruto</i>:
+				<p class='question'><a href='../datasets/tweets/tweets_Naruto.csv'>tweets_Naruto.csv</a></p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot38.png" width=500px height=300px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>Cleaned Tweets in the form of word baskets on the topic of <i>FGO</i>:
+				<p class='question'><a href='../datasets/tweets/tweets_FGO.csv'>tweets_FGO.csv</a></p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot39.png" width=400px height=300px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>Cleaned Tweets in the form of word baskets on the anime of <i>Demon Slayer</i>:
+				<p class='question'><a href='../datasets/tweets/tweets_DemonSlayer.csv'>tweets_DemonSlayer.csv</a></p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot40.png" width=300px height=300px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>Cleaned Tweets in the form of word baskets on the character of <i>Tohsaka Rin</i>:
+				<p class='question'><a href='../datasets/tweets/tweets_Rin.csv'>tweets_Rin.csv</a></p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot41.png" width=300px height=300px></div>
+			</td>
+		    </tr>
+		</table>
+		<br/>
+	    <h3><i>Tag Data</i></h3>
+	    
+	    <table>
+		    <tr>
+			<td width=200px>
+				<p>The tags of Top 1000 ranked animes in the form of word baskets:
+				<p class='question'><a href='../datasets/tweets/TagBasket.txt'>TagBasket.txt</a></p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot42.png" width=300px height=300px></div>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>ARM</i></h2>
+		<br/>
+		
+		<h3><i>Basic Concepts</i></h3>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>ARM is the abbreviation of Association Rule Mining. It aims at seeking for the rules in the transaction data. The rules suggest that we can assert that given the first element, the second element is much likely to exist simultaneously.(Measured by Conf and Lift) And the rules are not minor.(Measured by Sup)</p>
+		        <p>In my examples the most strict restriction for generating at least 10 rules is about lower bound of 0.02-0.1 for <i>Sup</i> with lower bound of 0.8-1 for <i>Conf</i>.</p>
+		    </td>
+		    </tr>
+		</table>
+		<h3><i>Violet Evergarden</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>We set Sup to be greater than 0.06 and Conf to be greater than 1. Then we have the top 15 rules by Sup, Conf and Lift on the right with links below:
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_VioletEvergarden.csv _Rules_TopSup.txt'>TopSup.csv</a></p>
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_VioletEvergarden.csv _Rules_TopConf.txt'>TopConf.csv</a></p>
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_VioletEvergarden.csv _Rules_TopLift.txt'>TopLift.csv</a></p>
+			</td>
+			<td width=100px></td>
+			<td width=300px>
+			    <i>TopSup:</i>
+			    <div><img src="../pic/shot48.png" width=250px height=150px></div>
+			    <i>TopConf:</i>
+			    <div><img src="../pic/shot49.png" width=250px height=150px></div>
+			    <i>TopLift:</i>
+			    <div><img src="../pic/shot50.png" width=250px height=150px></div>
+			</td>
+			<td>
+			    <h3>Basic Explanation:</h3>
+			    <p>Top rules on the left are defined to be the top rules in the frequent sets in the order of some metric.</p><p> In this example, the first rule of <i>TopSup</i> is <i>{animesx_} to {violet}</i>, which means elements of the rule occurs simultaneously with relatively higher frequency (Lower bound of Sup) and  the second element occurs with a high probability given the first element occurs. (Lower bound of Conf)</p><p>The first rule of <i>TopConf</i> is <i>{means} to {violet}</i>, which means its Conf comes the first in the rule set.</p><p>The first rule of <i>TopLift</i> is <i>{know, want} to {means}</i>, which means the two elements of it has close relation. (Relatively large value of Lift)</p>
+			    <h3>Comment:</h3>
+			    <p>In <i>violet evergarden</i>, the top rules in the frequent sets in three orders seem to be similar, with elements of words of <i>love, want, violet, etc.</i></p>
+			</td>
+		    </tr>
+		</table>
+		
+		<h3><i>Naruto</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>We set Sup to be greater than 0.06 and Conf to be greater than 1. Then we have the top 15 rules by Sup, Conf and Lift on the right with links below:
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_Naruto.csv _Rules_TopSup.txt'>TopSup.csv</a></p>
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_Naruto.csv _Rules_TopConf.txt'>TopConf.csv</a></p>
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_Naruto.csv _Rules_TopLift.txt'>TopLift.csv</a></p>
+			</td>
+			<td width=100px></td>
+			<td width=300px>
+			    <i>TopSup:</i>
+			    <div><img src="../pic/shot51.png" width=300px height=150px></div>
+			    <i>TopConf:</i>
+			    <div><img src="../pic/shot52.png" width=300px height=150px></div>
+			    <i>TopLift:</i>
+			    <div><img src="../pic/shot53.png" width=300px height=150px></div>
+			</td>
+			<td>
+			    <h3>Basic Explanation:</h3>
+			    <p> In this example, the first rule of <i>TopSup</i> is <i>{scenes} to {naruto}</i>, which means elements of the rule occurs simultaneously with relatively higher frequency (Lower bound of Sup) and  the second element occurs with a high probability given the first element occurs. (Lower bound of Conf)</p><p>The first rule of <i>TopConf</i> is <i>{dawn} to {welcome}</i>, which means its Conf comes the first in the rule set.</p><p>The first rule of <i>TopLift</i> is <i>{dawn} to {welcome}</i>, which means the two elements of it has close relation. (Relatively large value of Lift)</p>
+			    <h3>Comment:</h3>
+			    <p>In <i>Naruto</i>, there are only 9 rules generated, which indicates the restrictions are somehow strict. But I still get something interesting which we will mention later.</p>
+			</td>
+		    </tr>
+		</table>
+		
+		<h3><i>FGO</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>We set Sup to be greater than 0.01 and Conf to be greater than 0.8. Then we have the top 15 rules by Sup, Conf and Lift on the right with links below:
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_FGO.csv _Rules_TopSup.txt'>TopSup.csv</a></p>
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_FGO.csv _Rules_TopConf.txt'>TopConf.csv</a></p>
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_FGO.csv _Rules_TopLift.txt'>TopLift.csv</a></p>
+			</td>
+			<td width=100px></td>
+			<td width=300px>
+			    <i>TopSup:</i>
+			    <div><img src="../pic/shot54.png" width=300px height=150px></div>
+			    <i>TopConf:</i>
+			    <div><img src="../pic/shot55.png" width=250px height=150px></div>
+			    <i>TopLift:</i>
+			    <div><img src="../pic/shot56.png" width=250px height=150px></div>
+			</td>
+			<td>
+			    <h3>Basic Explanation:</h3>
+			    <p> In this example, the first rule of <i>TopSup</i> is <i>{arc_daily} to {takeuchi}</i>, which means elements of the rule occurs simultaneously with relatively higher frequency (Lower bound of Sup) and  the second element occurs with a high probability given the first element occurs. (Lower bound of Conf)</p><p>The first rule of <i>TopConf</i> is <i>{maid} to {fatego}</i>, which means its Conf comes the first in the rule set.</p><p>The first rule of <i>TopLift</i> is <i>{book} to {salieri}</i>, which means the two elements of it has close relation. (Relatively large value of Lift)</p>
+			    <h3>Comment:</h3>
+			    <p>In <i>FGO</i>, the results of three measure become different. While <i>TopSup</i> contains rules with more general terms in FGO, <i>TopConf</i> and <i>TopLift</i> contain rules with more specific terms in FGO.</p>
+			</td>
+		    </tr>
+		</table>
+		
+		<h3><i>Demon Slayer</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>We set Sup to be greater than 0.06 and Conf to be greater than 1. Then we have the top 15 rules by Sup, Conf and Lift on the right with links below:
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_DemonSlayer.csv _Rules_TopSup.txt'>TopSup.csv</a></p>
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_DemonSlayer.csv _Rules_TopConf.txt'>TopConf.csv</a></p>
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_DemonSlayer.csv _Rules_TopLift.txt'>TopLift.csv</a></p>
+			</td>
+			<td width=100px></td>
+			<td width=300px>
+			    <i>TopSup:</i>
+			    <div><img src="../pic/shot57.png" width=300px height=150px></div>
+			    <i>TopConf:</i>
+			    <div><img src="../pic/shot58.png" width=250px height=150px></div>
+			    <i>TopLift:</i>
+			    <div><img src="../pic/shot59.png" width=250px height=150px></div>
+			</td>
+			<td>
+			    <h3>Basic Explanation:</h3>
+			    <p> In this example, the first rule of <i>TopSup</i> is <i>{slayer} to {demon}</i>, which means elements of the rule occurs simultaneously with relatively higher frequency (Lower bound of Sup) and  the second element occurs with a high probability given the first element occurs. (Lower bound of Conf)</p><p>The first rule of <i>TopConf</i> is <i>{knytweets} to {slayer}</i>, which means its Conf comes the first in the rule set.</p><p>The first rule of <i>TopLift</i> is <i>{knypics} to {anime}</i>, which means the two elements of it has close relation. (Relatively large value of Lift)</p>
+			    <h3>Comment:</h3>
+			    <p>In <i>Demon Slayer</i>, rules of the three lists seem to be similar with special words of <i>knytweets, knypics_</i>, which I will explain later.</p>
+			</td>
+		    </tr>
+		</table>
+		
+		<h3><i>Tohsaka Rin</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>We set Sup to be greater than 0.06 and Conf to be greater than 1. Then we have the top 15 rules by Sup, Conf and Lift on the right with links below:
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_Rin.csv _Rules_TopSup.txt'>TopSup.csv</a></p>
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_Rin.csv _Rules_TopConf.txt'>TopConf.csv</a></p>
+				<p class='question'><a href='../datasets/tweets/rules/ tweets_Rin.csv _Rules_TopLift.txt'>TopLift.csv</a></p>
+			</td>
+			<td width=100px></td>
+			<td width=300px>
+			    <i>TopSup:</i>
+			    <div><img src="../pic/shot60.png" width=300px height=150px></div>
+			    <i>TopConf:</i>
+			    <div><img src="../pic/shot61.png" width=300px height=150px></div>
+			    <i>TopLift:</i>
+			    <div><img src="../pic/shot62.png" width=300px height=150px></div>
+			</td>
+			<td>
+			    <h3>Basic Explanation:</h3>
+			    <p> In this example, the first rule of <i>TopSup</i> is <i>{fate} to {tohsaka}</i>, which means elements of the rule occurs simultaneously with relatively higher frequency (Lower bound of Sup) and  the second element occurs with a high probability given the first element occurs. (Lower bound of Conf)</p><p>The first rule of <i>TopConf</i> is <i>{girl} to {tohsaka}</i>, which means its Conf comes the first in the rule set.</p><p>The first rule of <i>TopLift</i> is <i>{finally} to {costest}</i>, which means the two elements of it has close relation. (Relatively large value of Lift)</p>
+			    <h3>Comment:</h3>
+			    <p>We should notice that different from the 4 topics above, Tohsaka Rin is one of the main characters of anime series <i>Fate</i>.</p><p>What interests me is that in <i>TopConf</i> and <i>TopLift</i>, there are rules such as <i>{finally} to {costest}</i> and <i>{finally, tohsaka} to {costest}</i>, which indicate that sometimes we can judge whether the tweet is about a testing cosplay with some other words.</p>
+			</td>
+		    </tr>
+		</table>
+		
+		<br/>
+		<br/>
+		<h3><i>Tags of Top Ranked Anime</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+			    <p>In this part, I try to apply ARM method to the tag data.</p>
+				<p>We set Sup to be greater than 0.00 and Conf to be greater than 0.8. Surprisingly, no rules could be generated. That somehow illustrates that the tags for the anime are rather standard and quite independent with each other.
+			</td>
+			<td width=100px></td>
+		    </tr>
+		</table>
+		
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Networking</i></h2>
+		<br/>
+		<h3><i>Intro</i></h3>
+		<p>We reserve <i>Lift</i> as the weights of the above rules for visualizations. Then we create visualizations of 3 htmls and 1 pic for each stage.</p>
+	    <p><i>htmlwidget</i>s are interactive webpages in which you can click on squares for elements and circles for rules. You can also search by id in a dropdown list.</p>
+	    <p><i>NetD3</i>s are interactive webpages in which you stretch the circles of elements to see the relations among them.</p>
+	    <p><i>Scatter</i>s are htmls with scatter plots of <i>Sup</i> and <i>Conf</i> of rules as points.</p>
+	    <p><i>Graph</i>s are pics of the top-10 rules as graphs.</p>
+	    <br/>
+		<h3><i>Violet Evergarden</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The links of html visualizations are below:<i></i>
+				<p class='question'><a href='../generated_html/htmlwidget_ tweets_VioletEvergarden.csv .html'>htmlwidget.html</a></p>
+				<p class='question'><a href='../generated_html/NetD3_ tweets_VioletEvergarden.csv .html'>NetD3.html</a></p>
+				<p class='question'><a href='../generated_html/plot_scatter_ tweets_VioletEvergarden.csv .html'>scatter.html</a></p>
+			</td>
+			<td width=100px></td>
+			<td width=300px>
+			    <i>Graph:</i>
+			    <div><img src="../pic/shot43.png" width=300px height=300px></div>
+			</td>
+			<td>
+			    <h3>Comment:</h3>
+			    <p>In <i>Violet Evergarden</i>, the graph indicate that the top rules emerge with elements that contain words such as <i>love, means, know</i>. In htmls, we can have deeper exploration about the rules.</p>
+			</td>
+		    </tr>
+		</table>
+        
+        <br/>
+		<h3><i>Naruto</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The links of html visualizations are below:<i></i>
+				<p class='question'><a href='../generated_html/htmlwidget_ tweets_Naruto.csv .html'>htmlwidget.html</a></p>
+				<p class='question'><a href='../generated_html/NetD3_ tweets_Naruto.csv .html'>NetD3.html</a></p>
+				<p class='question'><a href='../generated_html/plot_scatter_ tweets_Naruto.csv .html'>scatter.html</a></p>
+			</td>
+			<td width=100px></td>
+			<td width=300px>
+			    <i>Graph:</i>
+			    <div><img src="../pic/shot44.png" width=300px height=300px></div>
+			</td>
+			<td>
+			    <h3>Comment:</h3>
+			    <p>In <i>Naruto</i>, the graph is in two parts. And we can have some popular words such as <i>akatsuki, dawn</i>. In htmls, we can have deeper exploration about the rules.</p>
+			</td>
+		    </tr>
+		</table>
+		
+		<br/>
+		<h3><i>FGO</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The links of html visualizations are below:<i></i>
+				<p class='question'><a href='../generated_html/htmlwidget_ tweets_FGO.csv .html'>htmlwidget.html</a></p>
+				<p class='question'><a href='../generated_html/NetD3_ tweets_FGO.csv .html'>NetD3.html</a></p>
+				<p class='question'><a href='../generated_html/plot_scatter_ tweets_FGO.csv .html'>scatter.html</a></p>
+			</td>
+			<td width=100px></td>
+			<td width=300px>
+			    <i>Graph:</i>
+			    <div><img src="../pic/shot45.png" width=300px height=300px></div>
+			</td>
+			<td>
+			    <h3>Comment:</h3>
+			    <p>In <i>FGO</i>, we can have special words such as <i>book, antonio, salieri</i>. In htmls, we can have deeper exploration about the rules.</p>
+			</td>
+		    </tr>
+		</table>
+		
+		<h3><i>Demon Slayer</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The links of html visualizations are below:<i></i>
+				<p class='question'><a href='../generated_html/htmlwidget_ tweets_DemonSlayer.csv .html'>htmlwidget.html</a></p>
+				<p class='question'><a href='../generated_html/NetD3_ tweets_DemonSlayer.csv .html'>NetD3.html</a></p>
+				<p class='question'><a href='../generated_html/plot_scatter_ tweets_DemonSlayer.csv .html'>scatter.html</a></p>
+			</td>
+			<td width=100px></td>
+			<td width=300px>
+			    <i>Graph:</i>
+			    <div><img src="../pic/shot46.png" width=300px height=300px></div>
+			</td>
+			<td>
+			    <h3>Comment:</h3>
+			    <p>In <i>FGO</i>, we can have special words such as <i>knypics_, knytweets</i>. In htmls, we can have deeper exploration about the rules.</p>
+			</td>
+		    </tr>
+		</table>
+		
+		<h3><i>Tohsaka Rin</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The links of html visualizations are below:<i></i>
+				<p class='question'><a href='../generated_html/htmlwidget_ tweets_Rin.csv .html'>htmlwidget.html</a></p>
+				<p class='question'><a href='../generated_html/NetD3_ tweets_Rin.csv .html'>NetD3.html</a></p>
+				<p class='question'><a href='../generated_html/plot_scatter_ tweets_Rin.csv .html'>scatter.html</a></p>
+			</td>
+			<td width=100px></td>
+			<td width=300px>
+			    <i>Graph:</i>
+			    <div><img src="../pic/shot47.png" width=300px height=300px></div>
+			</td>
+			<td>
+			    <h3>Comment:</h3>
+			    <p>About <i>Tohsaka Rin</i>, we can have special words such as <i>costest</i>. In htmls, we can have deeper exploration about the rules.</p>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Conclusions:</i></h2>
+		<table>
+	        <tr>
+	        <td width=300px>
+        		<p>&bull; In tweets on <i>Violet Evergarden</i>, there are associations among words of <i>love, want, know, mean</i>. That indicates people watching this anime tend to have deep and positive thoughts--that's what the anime conveys. These words are not minor because in tweets of many other animes, even no association can be found under such a strict standard.</p>
+            </td>
+            <td width=100px></td>
+			<td width=300px>
+			    <h3><i>Violet</i></h3>
+			    <div><img src="../pic/Violet.jpg" width=500px height=300px></div>
+			</td>
+			</tr>
+			<tr>
+			<td width=300px>
+        		<p>&bull; In tweets on <i>Naruto</i>, the most frequently occuring associations contain <i>akatsuki, dawn</i>. Those are different appellations of the same orgnization in the anime series, which was the biggest antagonist orgnization. People like the orgnization because the members are the kind of people with strong determination and cool appearance.</p>
+        	</td>
+            <td width=100px></td>
+			<td width=300px>
+			    <h3><i>Akatsuki</i></h3>
+			    <div><img src="../pic/Akatsuki.jpg" width=600px height=300px></div>
+			</td>
+			</tr>
+			<tr>
+			<td width=300px>
+        		<p>&bull; As for tweets on <i>FGO</i>, we should first mention that <i>FGO</i> is a famous game with anime characters. The collected tweets are primarily for the last 7 days. There are associations between <i>book</i> and <i>antonio, salieri</i>. <i>Antonio Salieri</i> is one of the new characters appearing on stage in the game. (Yeah the famous Italian classical composer) And <i>book</i> is a kind of resource in the game. That association indicates players are feeding the new character with resources. That could be some reference for the game developers for these several days.</p>
+        	</td>
+            <td width=100px></td>
+			<td width=300px>
+			    <h3><i>Antonio Salieri</i></h3>
+			    <div><img src="../pic/Antonio.jpg" width=350px height=500px></div>
+			</td>
+			</tr>
+			<tr>
+			<td width=300px>
+        		<p>&bull; In tweets on <i>Demon Slayer</i>, we can find association between <i>demon, slayer</i> and <i>knypic_, knytweets</i>. Knytweets and knypic_ are two popular fan accounts for <i>Demon Slayer</i> on Twitter. They release screen shots and new compositions and have gained interest from many people.</p>
+        	</td>
+            <td width=100px></td>
+			<td width=300px>
+			    <h3><i>Pic recently released by knytweets</i></h3>
+			    <div><img src="../pic/kny.jfif" width=350px height=500px></div>
+			</td>
+			</tr>
+			<tr>
+			<td width=300px>
+        		<p>&bull; In tweets on the character of <i>Tohsaka Rin</i>, we can find association between <i>tohsaka</i> and <i>costest</i>. Recent topics about Rin in Twitter are mostly focused on cosplay performances. Cosplayers release new pictures and fans quote the pics.</p>
+		    </td>
+		    <td width=100px></td>
+			<td width=300px>
+			    <h3><i>Cosplay Show from Nachi@cg19927</i></h3>
+			    <div><img src="../pic/rin.jfif" width=350px height=500px></div>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Personal Opinions about ARM:</i></h2>
+		<table>
+	        <tr>
+	        <td width=300px>
+        		<p>&bull; In ARM method, the choices for the restrictions, lower bounds of <i>Sup</i> and <i>Conf</i>, are quite important.</p>
+        		<p>&bull; There are some difficulties for ARM method in the stage of Tweets:</p> 
+        		<p>(1) People always talk about different contents even within a certain topic. For example, when talking about a certain anime, they can talk about the plots, the cosplayers, some nice pictures, or even just a simple sentence saying that 'XXX' is so cool! The huge range of the contents cannot lead to some basic rules!</p>
+        		<p>(2) While transaction data of transactions gives explicit restrictions to the elements in the baskets, transaction data of text is sometimes composed of different words with the same meaning. Although the method of lemmatization is available, you can still see in the example of <i>Naruto</i>, the two words of <i>akatsuki</i> and <i>dawn</i> still not belong to the same group--We cannot have a infinite lemmatization dictionary that deals with everything for us!</p>
+		    </td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>RScripts:</i></h2>
+		<p><a href='../Rscripts/ARM and Networking/TweetCollect.r'>TweetCollect.r</a></p>
+		<p class='question'>It collects all the tweet data.</p>
+		<p><a href='../Rscripts/ARM and Networking/TagExtract.R'>TagExtract.R</a></p>
+		<p class='question'>It extract the tags from the dataset <a href='../datasets/cleaned/1000RKInfo_cleaned.txt'>1000RKInfo_cleaned.txt</a> in the previous parts.</p>
+		<p><a href='../Rscripts/ARM and Networking/ARM&Networking.r'>ARM&Networking.r</a></p>
+		<p class='question'>It does all the ARM and Networking process.</p>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<table>
+		    <tr>
+		        <td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Clustering.html' target="_blank">Last Part: Clustering</a>
+        		</div>
+        		</td>
+        		<td width=200px>
+        		</td>
+        		<td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Decision Trees.html' target="_blank">Next Part: Decision Trees</a>
+        		</div>
+        		</td>
+        	</tr>
+        </table>
+		<br/>
+	</div>
+	    <br/>
+	    <br/>
+	    <br/>
+		<div class="underworld">
+		<div class="coolwords">
+			Geting on board the ship,<br/><br/>
+			sailing off the cape. <br/><br/>
+			The wind's blowing hard, <br/><br/>
+			the sail's swelling out.<br/><br/>
+		    Farewell to my homeland,<br/><br/>
+		    where I was born and has lived.<br/><br/> 
+		    The little boy has started his adventure, <br/><br/>
+		    to sail out across the sea.<br/><br/>
+		    &lt;The Little Adventurer&gt;
+		</div>
+	    </div>
+</body>
+</html>

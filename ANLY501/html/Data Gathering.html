@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Data Gathering</title>
+<link rel="stylesheet" href="../css/style3.css">
+</head>
+<body class="back">
+	<div class="title">Data Gathering</div>
+	<HR width="100%" color=#987cb9 SIZE=1>
+	<p>The datasets I've gathered are mainly from:</p>
+		<p class='question'>&bull;<i>MyAnimeList</i>, the biggest anime website which provides the largest dataset in the world about information of animes;</p>
+		<p class='question'>&bull;<i>Bangumi</i>, a website which provides the largest dataset in China about information of animes;</p>
+		<p class='question'>&bull;<i>Bilibili</i>, the most popular anime app in China, which provides anime programmes online and contains lots of 'Bullet Screens';</p>
+		<p class='question'>&bull;<i>Twitter</i>, the most popular microblogging and social networking service in the world;</p>
+	<p>Surely I will collect data from more sources if needed. I'm still trying to get the permission of APIs on other websites.</p>
+	<HR width="100%" color=#987cb9 SIZE=1>
+	<p>Here are the links of datasets I've collected:</p>
+		<p class='question'><a href='../datasets/First1000PopAnime.txt' target="_blank">First1000PopAnime.txt<a></p>
+		<p class='questiondes'>It collects [Name, Score, Link] of Top 1000 Popular animes from MyAnimeList.</p>
+		<p class='question'><a href='../datasets/First1000RatingAnime.txt' target="_blank">First1000RatingAnime.txt<a></p>
+		<p class='questiondes'>It collects [Name, Score, Link] of Top 1000 Rank animes from MyAnimeList.</p>
+		<p class='question'><a href='../datasets/1000POPInfo.txt' target="_blank">1000POPInfo.txt<a></p>
+		<p class='questiondes'>It collects [Name, Link, Type, Status, Aired Time, Season, Broadcast Time, Producers, Licensors, Studios, Source, Tags, Duration, Rating, Score, Rank, Popularity, Members, Favorites] of Top 1000 Rank animes from MyAnimeList.</p>
+		<p class='question'><a href='../datasets/1000RKInfo.txt' target="_blank">1000RKInfo.txt<a></p>
+		<p class='questiondes'>It collects [Name, Link, Type, Status, Aired Time, Season, Broadcast Time, Producers, Licensors, Studios, Source, Tags, Duration, Rating, Score, Rank, Popularity, Members, Favorites] of Top 1000 Popular animes from MyAnimeList.</p>
+		<p class='question'><a href='../datasets/First1000RatingAnimeBangumi.txt' target="_blank">First1000RatingAnimeBangumi.txt<a></p>
+		<p class='questiondes'>It collects [Name, Link] of Top 1000 Popular animes from Bangumi.</p>
+		<p class='question'><a href='../datasets/1000RKInfoBangumi.txt' target="_blank">1000RKInfoBangumi.txt<a></p>
+		<p class='questiondes'>It collects [Name, Score, Link, Tags] of Top 1000 Popular animes from Bangumi.</p>
+		<p class='question'><a href='../datasets/AnimebyYear' target="_blank">AnimebyYear<a></p>
+		<p class='questiondes'>It collects [Name, Link] of animes of years from 2000 to 2021 from MyAnimeList.</p>
+		<p class='question'><a href='../datasets/bilibili bullet screens' target="_blank">bilibili bullet screens<a></p>
+		<p class='questiondes'>It collects bullet screens of three animes from bilibili using the tool of biliplus.</p>
+		<p class='question'><a href='../datasets/tweets' target="_blank">tweets<a></p>
+		<p class='questiondes'>It collects 3000 tweets on 3 animes from Twitter.</p>
+	<HR width="100%" color=#987cb9 SIZE=1>
+	<p>Here are the links of scripts I've used to scrape the data:</p>
+		<p class='question'><a href='../pythonscripts/Data Gathering/scrapeTopRank&TopPopMAL.py' target="_blank">scrapeTopRank&TopPopMAL.py<a></p>
+		<p class='questiondes'>It collects 'First1000PopAnime.txt' & 'First1000RatingAnime.txt'.</p> 
+		<p class='question'><a href='../pythonscripts/Data Gathering/scrapeTagsMostRankMAL.py' target="_blank">scrapeTagsMostRankMAL.py<a></p>
+		<p class='questiondes'>It collects '1000RKInfo.txt'.</p> 
+		<p class='question'><a href='../pythonscripts/Data Gathering/scrapeTagsMostPopMAL.py' target="_blank">scrapeTagsMostPopMAL.py<a></p>
+		<p class='questiondes'>It collects '1000POPInfo.txt'.</p> 
+		<p class='question'><a href='../pythonscripts/Data Gathering/scrapeTopRankBangumi.py' target="_blank">scrapeTopRankBangumi.py<a></p>
+		<p class='questiondes'>It collects 'First1000RatingAnimeBangumi.txt'.</p> 
+		<p class='question'><a href='../pythonscripts/Data Gathering/scrapeTagsTopRankBangumi.py' target="_blank">scrapeTagsTopRankBangumi.py<a></p>
+		<p class='questiondes'>It collects '1000RKInfoBangumi.txt'.</p>
+		<p class='question'><a href='../pythonscripts/Data Gathering/scrapeAnimebyYearMAL.py' target="_blank">scrapeAnimebyYearMAL.py<a></p>
+		<p class='questiondes'>It collects all the data in 'AnimebyYear'.</p>
+		<p class='question'><a href='../pythonscripts/Data Gathering/api_collect_tweets_Naruto.py' target="_blank">api_collect_tweets_Naruto.py<a></p>
+		<p class='question'><a href='../pythonscripts/Data Gathering/api_collect_tweets_SteinsGate.py' target="_blank">api_collect_tweets_SteinsGate.py<a></p>
+		<p class='question'><a href='../pythonscripts/Data Gathering/api_collect_tweets_violet.py' target="_blank">api_collect_tweets_violet.py<a></p>
+		<p class='questiondes'>Each of them collects 1000 tweets on one anime.</p>
+		<p>What needs to be mentioned is that during use, the codes need to be adjusted for the circle range and opening-format of files, because usually you cannot scrape all the data at one time--you will be restricted by the website sometimes and you need to continue to scrape the remaining data once validated.</p>
+	<HR width="100%" color=#987cb9 SIZE=1>
+	<p class='coolwords'>Future Potential Is Infinity! Hold on, Kiana648!</p>
+	<div class="symbol">
+			<img src="../pic/symbol.png" width=100px height=100px>
+	</div>
+	<HR width="100%" color=#987cb9 SIZE=1>
+	<table>
+		    <tr>
+		        <td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Introduction.html' target="_blank">Last Part: Introduction</a>
+        		</div>
+        		</td>
+        		<td width=1000px>
+        		</td>
+        		<td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Data Cleaning.html' target="_blank">Next Part: Data Cleaning</a>
+        		</div>
+        		</td>
+        	</tr>
+    </table>
+</body>
+</html>

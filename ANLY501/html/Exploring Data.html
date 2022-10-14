@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exploring Data</title>
+<link rel="stylesheet" href="../css/style5.css">
+</head>
+<body class='back'>
+	<div></div>
+	<div class="container">
+		<div class="title">Exploring Data</div>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<div>
+		<h2><i>Intro</i></h2>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The goal of this part is to have basic exploration of the datasets, including simple visuals and some direct statistics.</p>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>WordCloud of Anime Tags</i></h2><br/><br/>
+		<h3>Scores in Two Ways</h3>
+		<table>
+		    <tr>
+			<td width=200px>
+			    <p>Using the dataset of <a href='../datasets/cleaned/RK_whole_score.txt' target="_blank">RK_whole_score.txt</a>, we can have a wordcloud of top scored <b>Tags</b> among top ranked animes from <i>MyAnimeList</i>.</p>
+			</td>
+			<td width=100px>
+			</td>
+			<td>
+			<img src='../pic/wordcloud1.png' width=300px height=300px>
+			</td>
+		    </tr>
+		    
+		    <tr>
+			<td width=200px>
+			    <p>Using the dataset of <a href='../datasets/cleaned/RK_cut_tail_score.txt' target="_blank">RK_cut_tail_score.txt</a>, we can have a wordcloud of top scored(calculation in another method)of <b>Tags</b> among top ranked animes from <i>MyAnimeList</i>.</p>
+			</td>
+			<td width=100px>
+			</td>
+			<td>
+			<img src='../pic/wordcloud2.png' width=300px height=300px>
+			</td>
+		    </tr>
+		</table>
+		    <br/><br/>
+		<table>
+		    <tr>
+			<td width=300px>
+			    <p>The above two wordclouds are similar, but a little different in the ways of calculating <b>Total_Score</b>.</p><p> In the <b>whole_score</b> dataset, the score of a tag is directly the sum of scores of all the animes containing the tag.</p><p> But in the <b>cut_tail_score</b> dataset, the score of a tag is the sum of difference between scores and the minimum score of all the animes containing the tag.</p><p>So in the <b>whole_score</b> dataset, the tags that contained by larger numbers of animes with a relatively low rank win(All the rank score added has a basic value).</p><p>In the <b>cut_tail_score</b> dataset, tags contained by animes with low rank don't win anymore.</p><p>For example, Tag <b>Comedy</b> comes the first in <b>whole_score</b>, but is defeated by <b>Drama</b> in <b>cut_tail_score</b>.</p><p> Probably that means people watch animes of Comedy more and give relatively good ranks to them. But the top rank always exist in those Dramas.</p> 
+			</td>
+			<td width=100px>
+			</td>
+			<td>
+			    <h3>Whole_Score</h3>
+			<img src="../pic/shot6.png" width=300px height=200px>
+			<h3>Cut_Tail_Score</h3>
+			<img src="../pic/shot7.png" width=300px height=200px>
+			</td>
+		    </tr>
+		</table>
+		
+		<br/><br/>
+		    <h3>Top Ranked vs Most Popular</h3>
+		<table>
+		    <tr>
+			<td width=200px>
+			    <p>Using the dataset of <a href='../datasets/cleaned/POP_whole_score.txt' target="_blank">POP_whole_score.txt</a>, we can have a wordcloud of top scored of <b>Tags</b> among the most popular animes from <i>MyAnimeList</i>.</p>
+			    <p>Animes of <b>Action</b> are just the most popular. And that is similar to what happens in movies HAHA.</p>
+			</td>
+			<td width=100px>
+			</td>
+			<td>
+			<img src='../pic/wordcloud3.png' width=300px height=300px>
+			</td>
+		    </tr>
+		</table>
+		
+		<br/><br/>
+		    <h3>Taste Difference in Regions</h3>
+		<table>
+		    <tr>
+			<td width=400px>
+			    <p>Using the dataset of <a href='../datasets/cleaned/Bangu_RK_whole_score.txt' target="_blank">Bangu_RK_whole_score.txt</a>, we can have a wordcloud of top scored of <b>Tags</b> among the most popular animes from <i>Bangumi</i>.</p>
+			    <p>Since <b>Bangumi</b> is an anime website in China, tags may differ from what we have in <b>MyAnimeList</b>, which represents the taste of the whole world. And <b>Bangumi</b> allows users to edit the tags, so we just have much more tags here.</p><p>If we ignore the tags irrelevant to the topic or content of animes, then we have the top 10 tags as below:</p><p><i>"Comedy"</i>  <i>"Fantasy"</i>  <i>"Relief"</i>  <i>"Science Fiction"</i>  <i>"Fight"</i>  <i>"Passion"</i>  <i>"Daily Life"</i>  <i>"School"</i>  <i>"Love"</i>  <i>"Childhood"</i></p>
+			        <p>which have relevance to, but are different from the previous tags discussed on.</p>
+			</td>
+			<td width=100px>
+			</td>
+			<td>
+			<img src='../pic/wordcloud4.png' width=300px height=300px>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Histograms by Time</i></h2>
+		<br/><br/>
+		<h3>Month Feature</h3>
+		<table>
+		    <tr>
+		        <td width=200px>
+		            <p>If we counts the animes by months, we can have a histogram on the right. We can see that numbers of animes have some regular dramatic change in months.</p>
+		            <p>That is because animes are mostly aired in four months in one year: Jan., Apr., Jul., Oct.</p>
+		        </td>
+		        <td width=100px>
+		        </td>
+		        <td>
+		            <img src='../pic/hist1.png' width=300px height=300px>
+		        </td>
+		     </tr>
+		 </table>
+		 <br/><br/>
+		 <h3>Top 1000 Ranked Animes by Year</h3>
+		 <table>
+		     <tr>
+		        <td width=200px>
+		                <p>The reason for increase of numbers of top rank animes could be increase of total numbers of animes, which is due to the technical developments like Computer Graphics.</p><p> It could also be the true improvement of painting skills and storytelling methods. </p>
+		        </td>
+		        <td width=100px>
+		        </td>
+		        <td>
+		            <img src='../pic/hist2.png' width=300px height=300px>
+		        </td>
+		     </tr>
+		 </table>
+		 <br/><br/>
+		 <h3>Total Numbers from 2000 to 2021</h3>
+		 <table>
+		     <tr>
+		        <td width=200px>
+		            <p>Yes the total number of animes has increased dramatically.</p><p>And what is interesting is that the total number per year has decreased for these two years.</p>
+		        </td>
+		        <td width=100px>
+		        </td>
+		        <td>
+		            <img src='../pic/hist3.png' width=300px height=300px>
+		        </td>
+		     </tr>
+		 </table>
+		 <br/><br/>
+		 <h3>'Quality' of Animes from 2000 to 2021</h3>
+		 <table>
+		     <tr>
+		        <td width=200px>
+		            <p>If we use the fraction of numbers of top ranked animes in certain year divided by the total numbers of that year, we can have the histogram on the right.</p>The fraction somehow measures the art quality of animes. So we can see the quality of animes also improves.<p>
+		        </td>
+		        <td width=100px>
+		        </td>
+		        <td>
+		            <img src='../pic/hist4.png' width=300px height=300px>
+		        </td>
+		     </tr>
+		</table>
+		</div>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Codes</i></h2>
+		<p>Here are the codes used to explore the data.</p><br/>
+			<a href='../Rscripts/Exploring Data/ExploringData1.r' target="_blank">ExploringData1.r</a><br/><br/>
+				<p class="question">Generates all the English wordcloud visuals in the part of <b>WordCloud of Anime Tags</b></p><br/>
+			<a href='../Rscripts/Data Cleaning/DataCleaning3.r' target="_blank">DataCleaning3.r</a><br/><br/>
+			    <p class="question">Generates the Chinese wordcloud visuals in the part of <b>WordCloud of Anime Tags</b></p><br/>
+			<a href='../Rscripts/Exploring Data/ExploringData2.r' target="_blank">ExploringData2.r</a><br/><br/>
+				<p class="question">Generates all the visuals in the part of <b>Histograms by Time</b></p><br/>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<table>
+		    <tr>
+		        <td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Data Cleaning.html' target="_blank">Last Part: Data Cleaning</a>
+        		</div>
+        		</td>
+        		<td width=200px>
+        		</td>
+        		<td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Clustering.html' target="_blank">Next Part: Clustering</a>
+        		</div>
+        		</td>
+        	</tr>
+        </table>
+		<br/>
+	</div>
+	    <br/>
+	    <br/>
+	    <br/>
+		<div class="underworld">
+		<div class="coolwords">
+			The king must be greedier than any other. He must laugh louder and rage harder. He must exemplify the extreme of all things, good and evil. That is why his retainers envy and adore him. And why the flames of aspiration, to be as the king is, can burn within his people.
+		</div>
+		<div class="symbol">
+			<img src="../pic/Iskandar_pic.png" width=100px height=100px>
+		</div>
+		<div>
+		</div>
+	    </div>
+</body>
+</html>

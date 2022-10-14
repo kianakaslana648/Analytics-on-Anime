@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Data Cleaning</title>
+<link rel="stylesheet" href="../css/style4.css">
+</head>
+<body>
+	<div class="back"></div>
+	<div class="container">
+		<div class="title">Data Cleaning</div>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<div>
+		<h2><i>Intro</i></h2>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The goal of this part is to clean the datasets--to correct data errors, to remove useless data, etc.</p>
+				<p>Finally, I achieved some clean datasets which is better for data analysis in future.</p>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Raw Data</i></h2>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>Primarily, there are four datasets needed to be cleaned. They are:</p>
+				
+			</td>
+			<td></td>
+		    </tr>
+		    <tr>
+			<td width=400px>
+				<a href='../datasets/1000POPInfo.txt' target="_blank">1000POPInfo.txt</a><br/><br/>
+				<p class='question'>Collects detailed information of Top 1000 popular animes from <i>MyAnimeList</i>.</p>
+				<a href='../datasets/1000RKInfo.txt' target="_blank">1000RKInfo.txt</a><br/><br/>
+				<p class='question'>Collects detailed information of Top 1000 ranked animes from <i>MyAnimeList</i>.</p>
+				<a href='../datasets/1000RKInfoBangumi.txt' target="_blank">1000RKInfoBangumi.txt</a><br/><br/>
+				<p class='question'>Collects detailed information of Top 1000 ranked animes from <i>Bangumi</i>.</p>
+				<a href='../datasets/bilibili bullet screens' target="_blank">bilibili bullet screens</a><br/><br/>
+				<p class='question'>Collects bullet screens of 3 animes from <i>bilibili</i>.</p>
+				<a href='../datasets/tweets' target="_blank">tweets</a><br/><br/>
+				<p class='question'>Collects 3000 tweets on 3 animes from <i>Twitter</i>.</p>
+			</td>
+			<td></td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Cleaned Data(Python)</i></h2>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>What I achieve from the codes are:</p>				
+			</td>
+			<td></td>
+		    </tr>
+		    <tr>
+			<td width=400px>
+				<a href='../datasets/cleaned/1000PopInfo_cleaned.txt' target="_blank">1000POPInfo_cleaned.txt</a><br/><br/>
+				<p class='question'>Cleaner version of <b>1000POPInfo.txt</b></p>
+			</td>
+			<td>
+				<img src="../pic/shot1.png" width=300px height=200px>
+			</td>
+		    </tr>
+		    <tr>
+			<td width=400px>
+				<a href='../datasets/cleaned/1000RKInfo_cleaned.txt' target="_blank">1000RKInfo_cleaned.txt</a><br/><br/>
+				<p class='question'>Cleaner version of <b>1000RKInfo.txt</b></p>
+			</td>
+			<td>
+				<img src="../pic/shot2.png" width=300px height=200px>
+			</td>
+		    </tr>
+		    <tr>
+			<td width=400px>
+				<a href='../datasets/cleaned/1000RKInfoBangumi_cleaned.txt' target="_blank">1000RKInfoBangumi_cleaned.txt</a><br/><br/>
+				<p class='question'>Cleaner version of <b>1000RKInfoBangumi.txt</b></p>
+			</td>
+			<td>
+				<img src="../pic/shot3.png" width=350px height=70px>
+			</td>
+		    </tr>
+		    <tr>
+			<td width=400px>
+				<a href='../datasets/cleaned/bilibili bullet screens_cleaned' target="_blank">bilibili bullet screens_cleaned</a><br/><br/>
+				<p class='question'>Collects all the useful sentences of css files in <b>bilibili bullet screens</b></p>
+			</td>
+			<td>
+				<img src="../pic/shot4.png" width=200px height=200px>
+			</td>
+		    </tr>
+		    <tr>
+			<td width=400px>
+				<a href='../datasets/cleaned/BulletScreen_CleanedData.txt' target="_blank">BulletScreen_CleanedData.txt</a><br/><br/>
+				<p class='question'>Dataframe in a (words, label)-file table from <b>bilibili bullet screens_cleaned</b></p>
+			</td>
+			<td>
+				<img src="../pic/shot5.png" width=400px height=200px>
+			</td>
+		    </tr>
+		    
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Codes(Python)</i></h2>
+		<p>Here are the codes used to clean the raw data.</p><br/>
+			<a href='../pythonscripts/Data Cleaning/data_cleaning1.py' target="_blank">data_cleaning1.py</a><br/><br/>
+				<p class="question">Generates <b>1000RKInfo_cleaned.txt</b> from <b>1000RKInfo.txt</b></p><br/>
+			<a href='../pythonscripts/Data Cleaning/data_cleaning2.py' target="_blank">data_cleaning2.py</a><br/><br/>
+				<p class="question">Generates <b>1000POPInfo_cleaned.txt</b> from <b>1000POPInfo.txt</b></p><br/>
+			<a href='../pythonscripts/Data Cleaning/data_cleaning3.py' target="_blank">data_cleaning3.py</a><br/><br/>
+				<p class="question">Generates <b>1000RKInfoBangumi_cleaned.txt</b> from <b>1000RKInfoBangumi.txt</b></p><br/>
+			<a href='../pythonscripts/Data Cleaning/data_cleaning4.py' target="_blank">data_cleaning4.py</a><br/><br/>
+				<p class="question">Generates <b>bilibili bullet screens_cleaned</b> from <b>bilibili bullet screens</b></p><br/>
+			<a href='../pythonscripts/Data Cleaning/datacleaning_bullet.py' target="_blank">datacleaning_bullet.py</a><br/><br/>
+				<p class="question">Generates <b>BulletScreen_CleanedData.txt</b> (as dataframe) from <b>bilibili bullet screens_cleaned</b> (as corpus)(using the library <i>jieba</i> to cut the sentences into words in Chinese)</p><br/>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Cleaned Data(R)</i></h2>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>What I achieve from the codes are:</p>				
+			</td>
+			<td></td>
+		    </tr>
+		    <tr>
+			<td width=400px>
+				<a href='../datasets/cleaned/RK_whole_score.txt' target="_blank">RK_whole_score.txt</a><br/><br/>
+				<p class='question'>Contains two columns of [Word, Total_Score], in which <b>Word</b> comes from all the words in the Genres lists of animes in <b>1000RKInfo_cleaned.txt</b>, <b>Total_Score</b> is calculated by adding all the scores of animes that include the genre word.</p>
+			</td>
+			<td>
+				<img src="../pic/shot6.png" width=300px height=200px>
+			</td>
+		    </tr>
+		    <tr>
+			<td width=400px>
+				<a href='../datasets/cleaned/RK_cut_tail_score.txt' target="_blank">RK_cut_tail_score.txt</a><br/><br/>
+				<p class='question'>Contains two columns of [Word, Total_Score], similar to the dataset above, but with a different way of calculating <b>Total_Score</b>. I first reduce the scores of animes from <b>1000RKInfo_cleaned.txt</b> by the minimum score and then perform the same process as mentioned above.</p>
+			</td>
+			<td>
+				<img src="../pic/shot7.png" width=300px height=200px>
+			</td>
+		    </tr>
+		    <tr>
+		    <td width=400px>
+				<a href='../datasets/cleaned/POP_whole_score.txt' target="_blank">POP_whole_score.txt</a><br/><br/>
+				<p class='question'>Contains two columns of [Word, Total_Score], similar to the dataset <b>RK_whole_score.txt</b>, but having <b>Total_Score</b> calculated by the sum of <b>Members</b>, generated from the dateset <b>1000PopInfo_cleaned.txt</b>.</p>
+			</td>
+			<td>
+				<img src="../pic/shot8.png" width=300px height=200px>
+			</td>
+		    </tr>
+		    <tr>
+		    <td width=400px>
+				<a href='../datasets/cleaned/Bangu_RK_whole_score.txt' target="_blank">Bangu_RK_whole_score.txt</a><br/><br/>
+				<p class='question'>Contains two columns of [Word, Total_Score], similar to the dataset <b>RK_whole_score.txt</b>, but generated from the dateset <b>1000RKInfoBangumi_cleaned.txt</b>.</p>
+			</td>
+			<td>
+				<img src="../pic/shot9.png" width=300px height=200px>
+			</td>
+			
+			<tr>
+			<td width=400px>
+				<a href='../datasets/cleaned/tweets_cleaned' target="_blank">tweets_cleaned</a><br/><br/>
+				<p class='question'>Removes all the useless information including username and invalid characters of datasets from <b>tweets</b></p>
+			</td>
+			<td>
+				<img src="../pic/shot10.png" width=400px height=200px>
+			</td>
+		    </tr>
+		    <tr>
+		    <td width=400px>
+				<a href='../datasets/cleaned/Tweets_Dataframe.txt' target="_blank">Tweets_Dataframe.txt</a><br/><br/>
+				<p class='question'>Read the data from <b>tweets_cleaned</b> into a dataframe form</p>
+			</td>
+			<td>
+				<img src="../pic/shot11.png" width=400px height=200px>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Codes(R)</i></h2>
+		<p>Here are the codes used to clean the raw data.</p><br/>
+			<a href='../Rscripts/Data Cleaning/DataCleaning1.r' target="_blank">DataCleaning1.r</a><br/><br/>
+				<p class="question">Generates <b>RK_whole_score.txt</b> & <b>RK_cut_tail_score.txt</b> from <b>1000RKInfo_cleaned.txt</b> (Removing or adding '#' at the start of line 15, 41, 42)</p><br/>
+			<a href='../Rscripts/Data Cleaning/DataCleaning2.r' target="_blank">DataCleaning2.r</a><br/><br/>
+				<p class="question">Generates <b>POP_whole_score.txt</b> from <b>1000POPInfo_cleaned.txt</b></p><br/>
+			<a href='../Rscripts/Data Cleaning/DataCleaning3.r' target="_blank">DataCleaning3.r</a><br/><br/>
+				<p class="question">Generates <b>Bangu_RK_whole_score.txt.txt</b> from <b>1000RKInfoBangumi_cleaned.txt</b></p><br/>
+		    <a href='../Rscripts/Data Cleaning/DataCleaning_tweets1.r' target="_blank">DataCleaning_tweets1.r</a><br/><br/>
+				<p class="question">Generates <b>tweets_cleaned</b> from <b>tweets</b></p><br/>
+			<a href='../Rscripts/Data Cleaning/DataCleaning_tweets2.r' target="_blank">DataCleaning_tweets2.r</a><br/><br/>
+				<p class="question">Generates <b>Tweets_Dataframe.txt</b> from <b>tweets_cleaned</b></p><br/>
+		</div>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<table>
+		    <tr>
+		        <td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Data Gathering.html' target="_blank">Last Part: Data Gathering</a>
+        		</div>
+        		</td>
+        		<td width=200px>
+        		</td>
+        		<td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Exploring Data.html' target="_blank">Next Part: Exploring Data</a>
+        		</div>
+        		</td>
+        	</tr>
+        </table>
+		<br/>
+	</div>
+	    <br/>
+	    <br/>
+	    <br/>
+		<div class="underworld">
+		<div class="coolwords">
+			What's past is past. I cannot redo it, nor go back to it. I have escaped from that scene and still continue to live. All I can do is look forward.
+		</div>
+		<div class="symbol">
+			<img src="../pic/archer_pic.png" width=100px height=100px>
+		</div>
+		<div>
+		</div>
+	    </div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conclusions</title>
+<link rel="stylesheet" href="../css/style10.css">
+</head>
+<body class="back">
+	<div class="title">Conclusions</div>
+	<HR width="100%" color=#987cb9 SIZE=1>
+	<h2><i>Intro</i></h2>
+		<table>
+		    <tr>
+		    <td width=100px>
+	        </td>
+			<td width=200px>
+				<p>After inspecting numbers of datasets and applying a few methods, now we can finally draw the conclusions on questions about animes.</p>
+			</td>
+		    </tr>
+		</table>
+	<HR width="100%" color=#987cb9 SIZE=1>
+	<h2><i>Conclusions</i></h2>
+    <p class='question'><i>&bull; What is different among people's preferences for different genres of animes?</i></p>
+    <table>
+	    <tr>
+	    <td width=100px>
+		</td>
+		<td width=400px>
+		    <p>Actually, within top-ranked animes, people tend to create truly high scores for the <i>Dramas</i> while relatively low scores in a larger number are created for the <i>Comedies</i>.</p>
+		    <p>That's to say, people watch <i>Comedies</i> more and are fond of them. But the true artworks worthy of appreciation are among <i>Dramas</i>.</p>
+		    <p>Plus, if we only consider the popularity but not scores, then the <i>Action</i> genres are the most popular.</p>
+            <p>That's drawn by using different measures for anime genres within top ranked or most popular animes.</p>
+            <p>More details on the <b>Exploring Data</b> page.</p>
+        <td width=100px>
+        </td>
+		</td>
+		<td>
+		    <i>Wordcloud of Genre Scores under One Measure:</i>
+		    <div><img src='../pic/wordcloud1.png' width=300px height=300px></div>
+		</td>
+		</tr>
+	</table>
+	
+	<p class='question'><i>&bull; Is there much difference among people's taste for animes among different regions?</i></p>
+	<table>
+	    <tr>
+	    <td width=100px>
+		</td>
+		<td width=400px>
+		    <p>By digging into data provided by anime websites in different regions, we can find that there are differences but no big differences--more is about similarities.</p>
+		    <p>The top ranked genres or tags all include words such as <i>Comedy</i>, <i>Fantasy</i>, <i>Relief</i>.</p>
+		    <p>But they don't appear in the same sequence. For example, Chinese audiences love <i>Fantasy</i> as the second favorite genre while Western audiences love it as the sixth.</p>
+            <p>As a Chinese anime fan, that's just what I feel!</p>
+            <p>More details on the <b>Exploring Data</b> page.</p>
+        <td width=100px>
+        </td>
+		<td>
+		    <i>Wordcloud of Data from MyAnimeList:(Western)</i>
+		    <div><img src='../pic/wordcloud2.png' width=300px height=300px></div>
+		</td>
+		<td width=50px>
+        </td>
+		<td>
+		    <i>Wordcloud of Data from Bangumi:(Chinese)</i>
+		    <div><img src='../pic/wordcloud4.png' width=300px height=300px></div>
+		</td>
+		</tr>
+	</table>
+	
+	<p class='question'><i>&bull; Has the art technique of animes improved over the past 20 years?</i></p>
+	
+    <table>
+	    <tr>
+	    <td width=100px>
+		</td>
+		<td width=400px>
+		    <p>Yes it has improved.</p>
+		    <p>We can define a measurement for the 'quality' of animes within a certain year, as the number of animes within that year entering the top-1000-ranked list divided by the total number of animes in that year.</p>
+		    <p>We can see that the 'quality' of animes have the tendency of being improved over the past 20 years.</p>
+            <p>The 'quality' can just deemed as the art techniques.</p>
+            <p>More details on the <b>Exploring Data</b> page.</p>
+        <td width=100px>
+        </td>
+		<td>
+		    <i>Wordcloud of Data from MyAnimeList:(Western)</i>
+		    <div><img src='../pic/hist4.png' width=300px height=300px></div>
+		</td>
+		</tr>
+	</table>
+	
+	<p class='question'><i>&bull; Can we find a method to identify different animes from the bullet screens?</i></p>
+	
+	 <table>
+	    <tr>
+	    <td width=100px>
+		</td>
+		<td width=400px>
+		    <p>Yes we can.</p>
+		    <p>Simply turn the bullet screens into word frequencies and ignore the sequence of them. Then by applying clustering method we can distinguish them from each other.</p>
+		    <p>Actually by using agglomerative clustering with the cosine metrics we can gain perfect performance.</p>
+            <p>More details on the <b>Clustering</b> page.</p>
+		</tr>
+	</table>
+	
+	<p class='question'><i>&bull; Is there any difference among bullet screens in different episodes of the same anime?</i></p>
+	
+	<table>
+	    <tr>
+	    <td width=100px>
+		</td>
+		<td width=400px>
+		    <p>Yes there is difference in different episodes within the same anime.</p>
+		    <p>When people watch one episode they have special words for that episode. And some episodes seem to have similar word features. That can be shown through different clustering methods.</p>
+		    <p>That pattern is decided by the contents of different animes--how the plots develop, how the characters make changes. And actually the patterns differ in different animes.</p>
+		    <p>But one thing we can make sure is that bullet screens of the last episodes always contain words of appreciation and saying goodbye, which make the last episode unique and easily detected.</p>
+		    <p>Still, agglomerative clustering with the cosine metrics performs well in detecting the last episodes.</p>
+            <p>More details on the <b>Clustering</b> page.</p>
+        <td width=100px>
+        </td>
+		<td>
+		    <h3><i>Black-Heart Company</i></h3>
+	        <i>Episode 8 and 10</i>
+	        <div><img src="../pic/black_heart_p8.png" width=300px height=200px></div>
+	        <div><img src="../pic/black_heart_p10.png" width=300px height=200px></div>
+		</td>
+		<td width=50px>
+        </td>
+        <td>
+		    <i>The Last Episode</i>
+	        <div><img src="../pic/black_heart_p12.png" width=300px height=200px></div>
+		</td>
+		</tr>
+	</table>
+	
+	<p class='question'><i>&bull; Are people positively commenting on some certain animes in Twitter?</i></p>
+	
+	<table>
+	    <tr>
+	    <td width=100px>
+		</td>
+		<td width=400px>
+		    <p>Yes surely.</p>
+		    <p>By using ARM method we can create network visualizations of important rules within tweets on some certain animes.</p>
+		    <p>Actually we have rules composed of positve words such as 'love', 'welcome'.</p>
+            <p>More details on the <b>ARM and Networking</b> page.</p>
+        <td width=100px>
+        </td>
+		<td>
+		    <i>Rules in Tweets on Violet Evergarden</i>
+		    <div><img src="../pic/shot43.png" width=300px height=300px></div>
+		</td>
+		</tr>
+	</table>
+	
+	<p class='question'><i>&bull; Can we find some interesting relationship among words in Tweets on some certain animes?</i></p>
+	
+	<table>
+	    <tr>
+	    <td width=100px>
+		</td>
+		<td width=400px>
+		    <p>Yes we can.</p>
+		    <p>By using ARM method we can find the rules on certain Animes.</p>
+		    <p>One interesting point is that for anime series that have already ended, the rules seem to be on more constant topics. And for anime series that are still being updated, the rules are more relevant to what is going on recently in the anime.</p>
+		    <p>For example, in <i>Violet Evergarden</i>(ended) the rules are about words such as 'love', 'want', 'means' which have relationship with all episodes of the anime.</p>
+		    <p>But in anime and game series <i>FGO</i>, the rules are about <i>Antonio Salieri</i>(A new character) and <i>Book</i>(A kind of resource like exp in the game).</p>
+		    <p>That shows what topics people are interesting in for the animes recently.(Since Twitter only allows us to collect Tweets recently.)</p>
+		    <p></p>
+            <p>More details on the <b>ARM and Networking</b> page.</p>
+        <td width=100px>
+        </td>
+		<td>
+		    <i>Rules in Tweets on FGO</i>
+		    <div><img src="../pic/shot45.png" width=300px height=300px></div>
+		</td>
+		</tr>
+	</table>
+	
+	<p class='question'><i>&bull; Can we judge for the sentences of a review which anime it's about?</i></p>
+	
+	<table>
+	    <tr>
+	    <td width=100px>
+		</td>
+		<td width=400px>
+		    <p>Not exactly.</p>
+		    <p>If the sentences contain words that are indicating of a certain anime, we can easily identify them. Otherwise we cannot.</p>
+		    <p>A decision tree model doesn't work well according to accuracies on testing dataset.</p>
+		    <p>But we can primarily find two kinds of key features for distinguishing one group of animes from the other.</p>
+		    <p>One kind of word features are words that describe a large group of animes, such as 'movie', 'game'. That's to classify anime series into two groups, one group with movie or game extensions and the other group without those extensions.</p>
+		    <p>The other kind are words that are directly relevant to a certain anime, such as 'kirito', which is the name of the main character of an anime.</p>
+            <p>More details on the <b>Decision Trees</b> page.</p>
+		</tr>
+	</table>
+	
+	<p class='question'><i>&bull; About the famous anime and game series Pokemon, can we judge  the first class of the pokemon from their stats?</i></p>
+	
+	<table>
+	    <tr>
+	    <td width=100px>
+		</td>
+		<td width=400px>
+		    <p>Not exactly.</p>
+		    <p>The stats cannot be used to judge which class a pokemon is in.</p>
+		    <p>But for some certain classes such as Bug and Water pokemon, we can gain an accuracy within 0.4~0.5.</p>
+		    <p>That somehow shows the ideas of the game designer.</p>
+            <p>More details on the <b>Decision Trees</b> page.</p>
+        </td>
+		</tr>
+	</table>
+	
+	<p class='question'><i>&bull; Can we identify the anime soundtracks from the overall voice stats?</i></p>
+	
+    <table>
+	    <tr>
+	    <td width=100px>
+		</td>
+		<td width=400px>
+		    <p>Not exactly.</p>
+		    <p>We cannot use the strategy of overall stats for all anime singers or even all soundtracks of a certain singer.</p>
+		    <p>But within 5 anime singers: Amamiya Sora, Kana Hanazawa, RADWIMPS, Zardonic, Itou Kanako, we gain an accuracy of almost 0.7 for soundtracks by Kana Hanazawa and Zardonic.</p>
+            <p>More details on the <b>Naive Bayes & SVM</b> page.</p>
+        <td width=50px>
+        </td>
+		<td>
+		    <i>Feature Importance in Each Class:</i>
+		    <div><img src="../pic/shot102.png" width=400px height=300px></div>
+		</td>
+		<td width=20px>
+        </td>
+        <td>
+		    <i>Total Feature Importance:</i>
+		    <div><img src="../pic/shot103.png" width=400px height=300px></div>
+		</td>
+		</tr>
+	</table>
+	<HR width="100%" color=#987cb9 SIZE=1>
+	<h2><i>The Last Words</i></h2>
+	<table>
+	    <tr>
+	    <td width=100px>
+	    </td>
+		<td width=200px>
+			<p>Anime data is hard to gather, especially when I want to gather different kinds of data.</p>
+			<p>The datasets used in this portfolio are all the kinds of datasets I can find on animes.(Scores and Tags, Bullet screens, Tweets, Anime Reviews, Anime Music and so on)</p>
+			<p>However, it's really good to do something on what I'm really fond of as a beginning project to data science.</p>
+		</td>
+	    </tr>
+	</table>
+	<HR width="100%" color=#987cb9 SIZE=1>
+	<table>
+		    <tr>
+		        <td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Naive Bayes & SVM.html' target="_blank">Last Part: Naive Bayes & SVM</a>
+        		</div>
+        		</td>
+        		<td width=1100px>
+        		</td>
+        		<td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Ending Theme.html' target="_blank">Next Part: Ending Theme</a>
+        		</div>
+        		</td>
+        	</tr>
+    </table>
+</body>
+</html>

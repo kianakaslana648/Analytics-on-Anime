@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Naive Bayes & SVM</title>
+<link rel="stylesheet" href="../css/style9.css">
+</head>
+<body class='back'>
+	<div></div>
+	<div class="container">
+	   <div class="title">Naive Bayes and SVM</div>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Intro</i></h2>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The goal of this part is trying to use Naive Bayes and SVM models to find potential 'predictions' for the cleaned datasets.</p>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>About Datasets</i></h2>
+		<br/>
+	    <h3><i>Record Data</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+			    <p>The dataset contains audio features of five anime singers, collected through <i>Spotify</i> API.
+				<p>It contains columns of artist_name, valence, danceability, energy, loudness, speechiness, acousticness, liveness, tempo, mode_name. Each row represents a soundtrack.
+				<p class='question'><a href='../datasets/animeMusic.csv'>animeMusic.csv</a></p>
+
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot97.png" width=500px height=500px></div>
+			</td>
+		    </tr>
+		</table>
+		<br/>
+		<h3><i>Text Data</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The text dataset is 51 episodes of bullet screens on 4 animes from <i>bilibili</i>.</p>
+				<p class='question'><a href='../datasets/cleaned/bilibili bullet screens_cleaned'>bilibili bullet screens_cleaned</a></p>
+				<p>We can have a brief view of the word-document dataframe through CountVectorizer on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot14.png" width=650px height=400px></div>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>R Part (Record Data)</i></h2>
+		
+		<h3><i>Basic Ideas</i></h3>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>I trained Naive Bayes models using both qualitative and quantitive columns and trained SVM models using the quantitive columns only.</p>
+		    </td>
+		    </tr>
+		</table>
+		
+		<br/>
+		<h3><i>Naive Bayes:</i></h3>
+		<br/>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>I used <b>caret::train</b> with different parameters. But the results of the predictions showed all the same. (Different parameters in trainControl) So we can see them as one model.</p>
+		    </td>
+		    </tr>
+		</table>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>Of course before training the model I splitted the dataset into two parts, training set and testing set. So I can have the predictions on the testing dataset.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Predictions of the Model:</i>
+			    <div><img src="../pic/shot98.png" width=400px height=300px></div>
+			    <div><img src="../pic/shot99.png" width=400px height=300px></div>
+			</td>
+		    </tr>
+		</table>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The confusion matrix and the accuracies in each class are on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot100.png" width=500px height=150px></div>
+			    <i>Accuracies:</i>
+			    <div><img src="../pic/shot101.png" width=500px height=50px></div>
+			</td>
+		    </tr>
+		</table>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>We can see the feature importance in each class and the total feature importance on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Feature Importance in Each Class:</i>
+			    <div><img src="../pic/shot102.png" width=500px height=400px></div>
+			    <i>Total Feature Importance:</i>
+			    <div><img src="../pic/shot103.png" width=500px height=400px></div>
+			</td>
+		    </tr>
+		</table>
+		<b>Short Summary:</b>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>Naive Bayes doesn't perform well on this dataset. But we can gain information from the feature importance:</p>
+		        <p>&bull;Danceability and Valence are the most important to distinguish songs of the five singers.</p>
+		        <p>&bull;Tempos of the five singers are similar.</p>
+		    </td>
+		    </tr>
+		</table>
+		<br/>
+		<br/>
+		<h3><i>SVM:</i></h3>
+		<br/>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>I used SVM models with different kernels of Polynomial, RBF and Sigmoid with the most suitable cost. (Found through the Tune method)</p>
+		    </td>
+		    </tr>
+		</table>
+		<b>Polynomial with cost = 100 and degree = 3</b>
+	    <table>
+		    <tr>
+			<td width=200px>
+				<p>We can see the confusion matrix and accuracies in each class on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot104.png" width=500px height=150px></div>
+			    <i>Accuracies:</i>
+			    <div><img src="../pic/shot105.png" width=500px height=50px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<b>RBF with cost = 1000</b>
+	    <table>
+		    <tr>
+			<td width=200px>
+				<p>We can see the confusion matrix and accuracies in each class on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot106.png" width=500px height=150px></div>
+			    <i>Accuracies:</i>
+			    <div><img src="../pic/shot107.png" width=500px height=50px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<b>Sigmoid with cost = 1</b>
+	    <table>
+		    <tr>
+			<td width=200px>
+				<p>We can see the confusion matrix and accuracies in each class on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot108.png" width=500px height=150px></div>
+			    <i>Accuracies:</i>
+			    <div><img src="../pic/shot109.png" width=500px height=50px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<b>Short Summary:</b>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>When not choosing the best cost, the accuracy decreases and the error increases.</p>
+		        <p>From the confusion matrices and accuracies we can see the SVM model with RBF kernel performs best.</p>
+		        <p>That is to say, the songs by different singers can be somehow distinguished by the overall statistics. </p>
+		          <p> Surely the method  of using overall statistics cannot make sure to confirm one's voice and style. But still, it could somehow be an auxiliary tool.</p>
+		    </td>
+		    </tr>
+		</table>
+		<br/>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Python Part (Text Data)</i></h2>
+		<br/>
+		<h3><i>Basic Ideas</i></h3>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>I trained Naive Bayes models and SVM models using the word-document dataframe composed by CountVectorizer and TfidfVectorizer.</p>
+		    </td>
+		    </tr>
+		</table>
+		<h3><i>Naive Bayes:</i></h3>
+		<b>CountVectorizer:</b>
+		<br/>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>I used <b>MultinomialNB</b>. The confusion matrices and corresponding heatmaps are on the right.</p>
+		    </td>
+		    <td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot110.png" width=300px height=100px></div>
+			    <i>Heatmap:</i>
+			    <div><img src="../pic/shot112.png" width=300px height=300px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<b>TfidfVectorizer:</b>
+		<br/>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>I used <b>MultinomialNB</b>. The confusion matrices and corresponding heatmaps are on the right.</p>
+		    </td>
+		    <td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot111.png" width=300px height=100px></div>
+			    <i>Heatmap:</i>
+			    <div><img src="../pic/shot113.png" width=300px height=300px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<b>Feature Importance in CountVectorizer:</b>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>Feature importance in the situation of CountVectorizer is on the right.</p>
+		    </td>
+		    <td width=100px></td>
+			<td>
+			    <i>Feature Importance:</i>
+			    <div><img src="../pic/shot114.png" width=200px height=300px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<b>Short Summary:</b>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>Naive Bayes is not suitable for this dataset at all.</p>
+		        <p>There is no word which has much more importance than others, which means that the bullet screens written by people in different animes always have much similarity.</p>
+		    </td>
+		    </tr>
+		</table>
+		
+		<h3><i>SVM:</i></h3>
+		<p><b>CountVectorizer:</b></p>
+		<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RBF with C = 2</b></p>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>The confusion matrices are on the right.</p>
+		    </td>
+		    <td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot115.png" width=300px height=100px></div>
+			</td>
+		    </tr>
+		</table>
+		<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Polynomial with C = 1000 and degree = 7</b></p>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>The confusion matrices are on the right.</p>
+		    </td>
+		    <td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot117.png" width=300px height=100px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<p><b>TfidfVectorizer:</b></p>
+		<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RBF with C = 2</b></p>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>The confusion matrices are on the right.</p>
+		    </td>
+		    <td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot116.png" width=300px height=100px></div>
+			</td>
+		    </tr>
+		</table>
+		<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Polynomial with C = 1000 and degree = 7</b></p>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>The confusion matrices are on the right.</p>
+		    </td>
+		    <td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot118.png" width=300px height=100px></div>
+			</td>
+		    </tr>
+		</table>
+		
+		<b>Short Summary:</b>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>When changing the parameter of C in a big range, the results are almost the same. And a rather suitable degree for polynomial kernel is 7. (Still not good)</p>
+		        <p>In clustering, I found the agglomerative clustering with cosine distance to be a good method to distinguish the bullet screens. That indicates the data point can be somehow divided. </p>
+		        <p>But here with RBF and Polynomial kernels the SVM model doesn't work well. I think this situation needs a special kernel designed to map the original point to a suitable space.</p>
+		        <p>That's no simple problem and it's one of the bottlenoses of SVM method.</p>
+		    </td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Conclusions:</i></h2>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>&bull; First, about SVM method, I think the RBF kernel is a commonly used kernel and suitable for many cases. But surely there is no kernel suitable for every cases. In fact, different kernels are used for SVM models in different applications, which even have no relationship with each other. That's one of the bottlenoses of SVM method.</p>
+		        <p>&bull; For my topic, Naive Bayes and SVM told me that:</p>
+		        <p><b>(1)</b>The overall statistics of songs could be used to somehow help disguish by whom they are composed. But actually to fully confirm a singer's voice and style, we need dig more into the voice signals.</p>
+		        <p><b>(2)</b>There are limitations of traditional machine learning methods. That's why deep learning emerged and becomes popular.</p>
+		    </td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Scripts:</i></h2>
+		<h3><i>Python Script:</i></h3>
+		<p><a href='../pythonscripts/Naive Bayes & SVM/NB&SVM.ipynb'>NB&SVM.ipynb</a></p>
+		<p class='question'>It does all the python part.</p>
+		<h3><i>Rscript:</i></h3>
+		<p><a href='../Rscripts/Naive Bayes & SVM/NB&SVM.r'>NB&SVM.r</a></p>
+		<p class='question'>It does all the R part.</p>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<table>
+		    <tr>
+		        <td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Decision Trees.html' target="_blank">Last Part: Decision Trees</a>
+        		</div>
+        		</td>
+        		<td width=200px>
+        		</td>
+        		<td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Conclusions.html' target="_blank">Next Part: Conclusions</a>
+        		</div>
+        		</td>
+        	</tr>
+        </table>
+		<br/>
+	</div>
+	    <br/>
+	    <br/>
+	    <br/>
+        
+        <div class="underworld">
+        <div>
+			<img src="../pic/tenshi_pic.png" width=1079px height=167px class='center'>
+        </div>
+        <div class="symbol">
+			<img src="../pic/symbol.png" width=100px height=100px>
+		</div>
+		</div>
+</body>
+</html>

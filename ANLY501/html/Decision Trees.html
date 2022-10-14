@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Decision Trees</title>
+<link rel="stylesheet" href="../css/style8.css">
+</head>
+<body class='back'>
+	<div></div>
+	<div class="container">
+	    <div class="title">Decision Trees</div>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Intro</i></h2>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The goal of this part is trying to use Decision Trees to find potential 'predictions' for the cleaned datasets.</p>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>About Datasets</i></h2>
+		<br/>
+	    <h3><i>Record Data</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+			    <p>The dataset comes from <i>kaggle</i>, the original link is below:</p>
+			    <p class='question'><a href='https://www.kaggle.com/abcsds/pokemon'>https://www.kaggle.com/abcsds/pokemon</a></p>
+				<p>It collects data on different pokemons (fictional species) in anime series of <i>Pokemon</i>. Each row is a combination of stats and attributes of a pokemon. The link for downloading is below:
+				<p class='question'><a href='../datasets/Pokemon.csv'>Pokemon.csv</a></p>
+				<p>I recognize Type 1 as the label and want to find some relationship between Type 1 and the remaining attributes (except Type 2)</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot87.png" width=500px height=300px></div>
+			</td>
+		    </tr>
+		</table>
+		<br/>
+		<h3><i>Text Data</i></h3>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>The record data comes from the following link. Its original source is <i>MyAnimeList</i></p>
+				<p class='question'><a href='https://www.kaggle.com/natlee/myanimelist-comment-dataset'>kaggle.com/natlee/myanimelist-comment-dataset</a></p>
+				<p>The link for downloading is here:</p>
+				<p class='question'><a href='../datasets/animeReviewsOrderByTime.txt'>animeReviewsOrderByTime.txt</a></p>
+				<p>It collects more than 130000 reviews composed of texts and ratings on animes. The description is here:<i></i></p>
+				<div><img src="../pic/shot12.png" width=300px height=200px></div>
+				<p>I only focus on the column of review, which can be considered as text data, with anime ID being the labels.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot88.png" width=650px height=300px></div>
+			    <i>Wordcloud of Cleaned Text Data:</i>
+			    <div><img src="../pic/review_wordcloud.png" width=600px height=400px></div>
+			</td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Python Part (Text Data)</i></h2>
+		
+		<h3><i>Basic Ideas</i></h3>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>I used CountVectorizer and TfidfVectorizer to clean the original review text data. <i>(min_df=2, max_features=6000)</i> After data-splitting, I applied splitting criterion of Entropy and Gini to create two trees for both.<i>(max_depth=1000)</i> Finally I tested them, computed confusion matrices and reported accuracies.</p>
+		    </td>
+		    </tr>
+		</table>
+		<br/>
+		<h3><i>CountVectorizer:</i></h3>
+		<br/>
+		<b>Entropy:</b>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>I created two visualizations for the tree, both of which are too big to display on this page. You can open the following link or just download them for a better view:</p>
+				<p class='question'><a href='../pic/CE_graph.png'>CE_graph.png</a></p>
+				<p class='question'><a href='../pic/Count_Entropy.png'>Count_Entropy.png</a></p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look at the root node:</i>
+			    <div><img src="../pic/shot89.png" width=300px height=300px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of the confusion matrix is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look at the confusion matrix:</i>
+			    <div><img src="../pic/shot63.png" width=200px height=150px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of top 10 features is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Top 10 features:</i>
+			    <div><img src="../pic/shot64.png" width=300px height=300px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of the accuracy is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Accuracy:</i>
+			    <div><img src="../pic/shot71.png" width=600px height=100px></div>
+		    </tr>
+		</table>
+		<br/>
+		<b>Gini:</b>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>I created two visualizations for the tree, both of which are too big to display on this page. You can open the following link or just download them for a better view:</p>
+				<p class='question'><a href='../pic/CG_graph.png'>CG_graph.png</a></p>
+				<p class='question'><a href='../pic/Count_Gini.png'>Count_Gini.png</a></p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look at the root node:</i>
+			    <div><img src="../pic/shot90.png" width=300px height=300px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of the confusion matrix is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look at the confusion matrix:</i>
+			    <div><img src="../pic/shot65.png" width=200px height=150px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of top 10 features is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Top 10 features:</i>
+			    <div><img src="../pic/shot66.png" width=300px height=300px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of the accuracy is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Accuracy:</i>
+			    <div><img src="../pic/shot72.png" width=600px height=100px></div>
+		    </tr>
+		</table>
+		<br/>
+		<br/>
+		<h3><i>TfidfVectorizer:</i></h3>
+		<br/>
+		<b>Entropy:</b>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>I created two visualizations for the tree, both of which are too big to display on this page. You can open the following link or just download them for a better view:</p>
+				<p class='question'><a href='../pic/TE_graph.png'>TE_graph.png</a></p>
+				<p class='question'><a href='../pic/Tfidf_Entropy.png'>Tfidf_Entropy.png</a></p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look at the root node:</i>
+			    <div><img src="../pic/shot91.png" width=300px height=300px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of the confusion matrix is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look at the confusion matrix:</i>
+			    <div><img src="../pic/shot67.png" width=200px height=150px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of top 10 features is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Top 10 features:</i>
+			    <div><img src="../pic/shot68.png" width=300px height=300px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of the accuracy is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Accuracy:</i>
+			    <div><img src="../pic/shot73.png" width=600px height=100px></div>
+		    </tr>
+		</table>
+		<br/>
+		<b>Gini:</b>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>I created two visualizations for the tree, both of which are too big to display on this page. You can open the following link or just download them for a better view:</p>
+				<p class='question'><a href='../pic/TG_graph.png'>TG_graph.png</a></p>
+				<p class='question'><a href='../pic/Tfidf_Gini.png'>Tfidf_Gini.png</a></p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look at the root node:</i>
+			    <div><img src="../pic/shot92.png" width=300px height=300px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of the confusion matrix is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look at the confusion matrix:</i>
+			    <div><img src="../pic/shot69.png" width=200px height=150px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of top 10 features is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Top 10 features:</i>
+			    <div><img src="../pic/shot70.png" width=300px height=300px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of the accuracy is on the right:</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Accuracy:</i>
+			    <div><img src="../pic/shot74.png" width=600px height=100px></div>
+		    </tr>
+		</table>
+		<br/>
+		<h3><i>Short Summary:</i></h3>
+		<table>
+		    <tr>
+			<td width=400px>
+				<p>&bull; Nodes containing <i>movi, game, kirito</i> always appear close to the root.</p>
+				<p>&bull; The four trees are approximately the same size. The size is restricted by the depth. The depth is restricted by time. (max_words=6000 & max_depth=1000 makes the time cost of creating one tree almost half an hour)</p>
+				<p>&bull; Max_words=6000 & max_depth=1000 is almost the best we can achieve. The accuracies just increased a little bit from max_words=3000 & max_depth=300 to max_words=6000 & max_depth=1000.</p>
+				<p>&bull; Two kinds of distinctive words appear close to the root node. The first kind of key words such as <i>movi, game</i> can be used to classify animes into two large groups. The second kind of key words such as <i>kirito, steins</i> can be used to specify a unique anime.</p>
+				<p>&bull; In this example, it seems no single word can be used to identify an anime.</p>
+				<p>&bull; In this example, <i>Gini</i> performs much better than <i>Entropy</i> according to accuracy, which is generated from confusion matrix.</p>
+				<p>&bull; In conclusion, the models use decision trees composed of judging nodes of frequencies of different words above or below some value to classify the review into some anime. If the review contains more distinctive words about some anime, the classification would be close to the true answer.</p>
+			</td>
+			<td width=100px></td>
+		    </tr>
+		</table>
+		
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>R Part (Record Data)</i></h2>
+		<br/>
+		<h3><i>Basic Ideas</i></h3>
+		<table>
+		    <tr>
+		    <td width=200px>
+		        <p>I want to use the stats and attributes of pokemon to judge which class it's in through the decision tree model.</p>
+		        <p>I created four trees with different criterion of <i>Entropy</i> & <i>Gini</i> and different values of <i>cp</i>.</p>
+		    </td>
+		    </tr>
+		</table>
+		<br/>
+		<h3><i>Gini:</i></h3>
+		<br/>
+		<b>cp=0.01:</b>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>Visualization of the tree is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Visualization:</i>
+			    <div><img src="../pic/shot75.png" width=700px height=700px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of top features is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Top Features:</i>
+			    <div><img src="../pic/shot93.png" width=600px height=600px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of confusion matrix is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot79.png" width=600px height=200px></div>
+		    </tr>
+		    
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of accuracies of different classes is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Accuracies:</i>
+			    <div><img src="../pic/shot83.png" width=600px height=200px></div>
+		    </tr>
+		</table>
+		<br/>
+		<b>cp=0.001:</b>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>A brief look at the tree is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot76.png" width=700px height=700px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of top features is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Top Features:</i>
+			    <div><img src="../pic/shot94.png" width=600px height=600px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of confusion matrix is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot80.png" width=600px height=200px></div>
+		    </tr>
+		    
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of accuracies of different classes is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Accuracies:</i>
+			    <div><img src="../pic/shot84.png" width=600px height=200px></div>
+		    </tr>
+		</table>
+		<br/>
+		<h3><i>Entropy:</i></h3>
+		<br/>
+		<b>cp=0.01:</b>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>Visualization of the tree is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Visualization:</i>
+			    <div><img src="../pic/shot77.png" width=700px height=700px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of top features is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Top Features:</i>
+			    <div><img src="../pic/shot95.png" width=600px height=600px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of confusion matrix is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot81.png" width=600px height=200px></div>
+		    </tr>
+		    
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of accuracies of different classes is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Accuracies:</i>
+			    <div><img src="../pic/shot85.png" width=600px height=200px></div>
+		    </tr>
+		</table>
+		<br/>
+		<b>cp=0.001:</b>
+		<table>
+		    <tr>
+			<td width=200px>
+				<p>A brief look at the tree is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>A brief look:</i>
+			    <div><img src="../pic/shot78.png" width=700px height=700px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of top features is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Top Features:</i>
+			    <div><img src="../pic/shot96.png" width=600px height=600px></div>
+		    </tr>
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of confusion matrix is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Confusion Matrix:</i>
+			    <div><img src="../pic/shot82.png" width=600px height=200px></div>
+		    </tr>
+		    
+		    <tr>
+			<td width=200px>
+				<p>Screen shot of accuracies of different classes is on the right.</p>
+			</td>
+			<td width=100px></td>
+			<td>
+			    <i>Accuracies:</i>
+			    <div><img src="../pic/shot86.png" width=600px height=200px></div>
+		    </tr>
+		</table>
+		<br/>
+		<h3><i>Short Summary:</i></h3>
+		<table>
+		    <tr>
+			<td width=400px>
+			    <p>&bull; The consistent key feature for four trees is <i>Total</i>.</p>
+				<p>&bull; The trees with <i>cp=0.001</i> are extended versions of corresponding trees with <i>cp=0.01</i>. The <i>Entropy</i> & <i>Gini</i> trees are similar.</p>
+				<p>&bull; The model has a rather low value of accuracy, but a higher accuracy within certain classes.</p>
+				<p>&bull; The parameter of <i>cp</i> somehow controls the complexity of the tree. Decrease in <i>cp</i> can lead to accuracy increase within certain classes and decrease within other classes.</p>
+				<p>&bull; The models use nodes of judging numeric attributes above or below some value and catigorical equal to some value to classify the pokemon into some class.</p>
+			</td>
+			<td width=100px></td>
+		    </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Conclusion</i></h2>
+		<br/>
+		<h3><i>About Anime Reviews</i></h3>
+		<br/>
+		<table>
+	        <tr>
+	        <td width=300px>
+        		<p>&bull; When people talk about some certain anime, they tend to use words or names from that specific animes. Words about the type or sources or relevant industries of animes also make sense in separating reviews on different animes.</p>
+            </td>
+			</tr>
+		</table>
+		<br/>
+		<h3><i>About Anime Reviews</i></h3>
+		<br/>
+		<table>
+	        <tr>
+	        <td width=300px>
+        		<p>&bull; The game designer seems not to be always designing pokemons with attributes corresponding to their classes. But Normal-type and Water-type pokemons seem to have certain corresponding attributes.
+            </td>
+            </tr>
+		</table>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<h2><i>Scripts:</i></h2>
+		<h3><i>Python Script:</i></h3>
+		<p><a href='../pythonscripts/Decision Tree/decisionTree.ipynb'>decisionTree.ipynb</a></p>
+		<p class='question'>It does all the python part.</p>
+		<h3><i>Rscript:</i></h3>
+		<p><a href='../Rscripts/Decision Tree/decisionTree.r'>decisionTree.r</a></p>
+		<p class='question'>It does all the R part.</p>
+		<HR width="100%" color=#987cb9 SIZE=1>
+		<table>
+		    <tr>
+		        <td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/ARM and Networking.html' target="_blank">Last Part: ARM and Networking</a>
+        		</div>
+        		</td>
+        		<td width=200px>
+        		</td>
+        		<td>
+        		<div class='nextdiv'>
+        			<a class='nextpart' href='../html/Naive Bayes & SVM.html' target="_blank">Next Part: Naive Bayes & SVM</a>
+        		</div>
+        		</td>
+        	</tr>
+        </table>
+		<br/>
+	</div>
+	    <br/>
+	    <br/>
+	    <br/>
+
+			<img src="../pic/konohana_quote.png" width=1300px height=600px class='center'>
+
+</body>
+</html>
