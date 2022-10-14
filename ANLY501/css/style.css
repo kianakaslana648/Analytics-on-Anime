@@ -1,0 +1,56 @@
+.back{
+     background: url("../pic/Hourai.png") no-repeat center 0;
+     background-attachment: fixed;
+}
+
+.title{
+     text-align: center;
+     //text-shadow: 2px 2px 20px gold;
+     font-family: Papyrus;
+     font-size: 50px;
+}
+
+.coolwords{
+     text-align: right;
+    // text-shadow: 2px 2px 5px gold;
+     font-family: Brush Script MT;
+     font-size:40px;
+}
+
+.information{
+     text-align: right;
+}
+
+.shift{
+     display:block;
+     //display:inline;
+}
+
+.shift:hover{
+     position: relative;
+     left: 20px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.option{
+     display:inline;
+     font-size:30px;
+     font-family:Garamond,Times New Roman,Georgia;
+}
+
+.icon{
+     width:25px;
+     height:25px;
+     display:inline;
+}
+
+a, a:link{
+     color: #000000;
+     text-decoration: none;
+}
+
+#bgm{
+    position:fixed;
+    bottom: 0px;
+    right: 0px;
+}

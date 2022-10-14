@@ -1,0 +1,23 @@
+.back{
+     background: url("../pic/Hourai3.png") no-repeat center 0;
+     background-attachment: fixed;
+}
+
+#bgm{
+    position:fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+#thank{
+    position:fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+.title{
+     text-align: center;
+     //text-shadow: 2px 2px 20px gold;
+     font-family: Garamond,Times New Roman,Georgia;
+     font-size: 50px;
+}
