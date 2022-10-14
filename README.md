@@ -44,24 +44,24 @@ $\quad$• Naive Bayes
 
 $\quad$• SVM
 
-$\textbf{More Details about Conclusions and Technical Results on the Webpages}$  
+$\quad\textbf{More Details about Conclusions and Technical Results on the Webpages}$  
 
 ### Deploy
-$\textbf{Homepage: Hourai Tour.html}$
+$\quad\textbf{Homepage: Hourai Tour.html}$
 
-$\textbf{Also Deployed in my Georgetown Domain:}$  
+$\quad\textbf{Also Deployed in my Georgetown Domain:}$  
 
-https://kiana648.georgetown.domains/courses/ANLY501/html/Hourai%20Tour.html
+$\quad\quad$https://kiana648.georgetown.domains/courses/ANLY501/html/Hourai%20Tour.html
 
-$\textbf{For github html file preview, you can go to the following link:}$  
+$\quad\textbf{For github html file preview, you can go to the following link:}$  
 
-https://htmlpreview.github.io/
+$\quad\quad$https://htmlpreview.github.io/
 
-$\textbf{And copy the following url to homepage:}$
+$\quad\textbf{And copy the following url to homepage:}$
 
-https://github.com/kianakaslana648/Analytics-on-Anime/blob/main/ANLY501/html/Hourai%20Tour.html
+$\quad\quad$https://github.com/kianakaslana648/Analytics-on-Anime/blob/main/ANLY501/html/Hourai%20Tour.html
 
 ### Datasets
-$\textbf{Collected Datasets are in my Georgetown Domain:}$  
+$\quad\textbf{Collected Datasets are in my Georgetown Domain:}$  
 
-https://kiana648.georgetown.domains/courses/ANLY501/datasets/
+$\quad\quad$https://kiana648.georgetown.domains/courses/ANLY501/datasets/
