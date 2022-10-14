@@ -46,7 +46,16 @@ $\quad$• SVM
 
 $\textbf{More Details about Conclusions and Technical Results on the Webpages}$  
 
+### Deploy
 $\textbf{Homepage: Hourai Tour.html}$
+
+$\textbf{You can go to the following link for github html file preview:}$  
+
+https://htmlpreview.github.io/
+
+$\textbf{And copy the following url to homepage:}$
+
+https://github.com/kianakaslana648/Analytics-on-Anime/blob/main/ANLY501/html/Hourai%20Tour.html
 
 $\textbf{Also Deployed in my Georgetown Domain:}$  
 
