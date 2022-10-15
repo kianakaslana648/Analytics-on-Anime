@@ -47,7 +47,7 @@ $\quad$• SVM
 $\quad\textbf{More Details about Conclusions and Technical Results on the Webpages}$  
 
 ### Deploy
-$\quad\textbf{Homepage: Hourai Tour.html}$
+$\quad\textbf{Index: Hourai Tour.html}$
 
 $\quad\textbf{Deployed in Personal Georgetown Domain:}$  
 
