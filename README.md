@@ -49,7 +49,7 @@ $\quad\textbf{More Details about Conclusions and Technical Results on the Webpag
 ### Deploy
 $\quad\textbf{Homepage: Hourai Tour.html}$
 
-$\quad\textbf{Also Deployed in my Georgetown Domain:}$  
+$\quad\textbf{Deployed in Personal Georgetown Domain:}$  
 
 $\quad\quad$https://kiana648.georgetown.domains/courses/ANLY501/html/Hourai%20Tour.html
 
@@ -62,6 +62,6 @@ $\quad\textbf{And copy the following url to homepage:}$
 $\quad\quad$https://github.com/kianakaslana648/Analytics-on-Anime/blob/main/ANLY501/html/Hourai%20Tour.html
 
 ### Datasets
-$\quad\textbf{Collected Datasets are in my Georgetown Domain:}$  
+$\quad\textbf{Collected Datasets are in Personal Georgetown Domain:}$  
 
 $\quad\quad$https://kiana648.georgetown.domains/courses/ANLY501/datasets/
